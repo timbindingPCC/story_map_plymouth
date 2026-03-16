@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import maplibregl from 'maplibre-gl'
+import mapboxgl from 'mapbox-gl'
 
 export default function FeaturePopup({ map, selectedFeature, onClose }) {
   const popupRef = useRef(null)
@@ -25,7 +25,7 @@ export default function FeaturePopup({ map, selectedFeature, onClose }) {
       </div>
     `
 
-    const popup = new maplibregl.Popup({ closeButton: true, maxWidth: '280px' })
+    const popup = new mapboxgl.Popup({ closeButton: true, maxWidth: '280px' })
       .setLngLat(lngLat)
       .setHTML(html)
       .addTo(map)
